@@ -1,0 +1,55 @@
+namespace = skittish
+
+ship_event = {
+	id = skittish.1
+	title = skittish.1.name
+	desc = skittish.1.desc
+	picture = GFX_evt_skittish
+	#show_sound = event_yellow_alert
+	location = root
+	show_sound = event_skittish_scientist
+
+	is_triggered_only = yes
+
+	trigger = {
+		is_ship_size = science
+		owner = {
+			is_country_type = default
+			is_ai = no
+		}
+		from = {
+			any_ship_in_system = {
+				# We want to react to "civilian" stations because they are weaponized
+				# But these ship types usually are not.
+				NOR = {
+					is_ship_class = shipclass_constructor
+					is_ship_class = shipclass_colonizer
+					is_ship_class = shipclass_science_ship
+					is_ship_class = shipclass_transport
+				}
+				exists = owner
+				owner = {
+					is_hostile = root.owner
+				}
+			}
+		}
+	}
+
+	option = {
+		name = skittish.1.a
+		custom_tooltip = "skittish.1.a.tooltip"
+		hidden_effect = {
+			fleet = {
+				clear_orders = yes
+				clear_fleet_actions = this
+				set_fleet_stance = evasive
+				#order_forced_return = yes
+			}
+		}
+	}
+
+	option = {
+		name = skittish.1.b
+		custom_tooltip = "skittish.1.b.tooltip"
+	}
+}

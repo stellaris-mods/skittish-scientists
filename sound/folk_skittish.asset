@@ -1,0 +1,5 @@
+sound = {
+	name = "event_skittish_scientist"
+	file = "event/folk_skittish.wav"
+	volume = 0.7
+}

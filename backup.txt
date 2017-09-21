@@ -1,0 +1,25 @@
+queue_actions = {
+	repeat {
+		find_closest_system = {
+			trigger = {
+				id = "skittish.1.trigger.1"
+				any_planet = {
+					is_surveyed = { who = root.owner status = yes }
+				}
+				NOT = {
+					any_ship_in_system = {
+						owner = {
+							is_hostile = root.owner
+						}
+					}
+				}
+			}
+			found_system = {
+				move_to = THIS
+			}
+			failed = {
+				# PANIC
+			}
+		}
+	}
+}

@@ -1,0 +1,8 @@
+﻿l_english:
+
+skittish.1.name: "Danger zone!?"
+skittish.1.desc: "§G[This.GetLeaderName]§!, commander of the §B[This.GetFleetName]§! has - like a complete nincompoop - run into some fiendishly hostile actors in the §Y[From.GetName]§! system! \n\nThe ship is hailing you through a subspace relay now. \n\nIncoming transmission: §H"[From.From.GetRulerTitle], can you read me?! Immediate action is most definitely probably required! I beg of you, allow us to take evasive action!\"§! \n\nTheir fate now most likely rests in your hands. Like it should."
+skittish.1.a: "Take evasive action, you fool!"
+skittish.1.a.tooltip: "Forcefully cancels all queued orders and forces the ship into Evasive fleet stance."
+skittish.1.b: "They must continue as ordered."
+skittish.1.b.tooltip: "Do nothing. If the science ship is already in Evasive stance, it will evade like normal. If not, it will continue its order queue."

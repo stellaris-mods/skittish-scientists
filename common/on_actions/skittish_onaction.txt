@@ -1,0 +1,18 @@
+# Triggers event when ship enters a system
+# Scope = Ship
+# From = System
+# FromFrom = Country
+on_entering_system = {
+	events = {
+		skittish.1
+	}
+}
+
+# A fleet has entered a system
+# Scope = Fleet
+# From = System
+#on_entering_system_fleet = {
+#	events = {
+#		skittish.2
+#	}
+#}
