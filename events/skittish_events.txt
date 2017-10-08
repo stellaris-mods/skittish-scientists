@@ -12,24 +12,23 @@ ship_event = {
 	is_triggered_only = yes
 
 	trigger = {
-		is_ship_size = science
-		owner = {
-			is_country_type = default
-			is_ai = no
-		}
-		from = {
+		is_ship_class = shipclass_science_ship
+		owner = { is_ai = no }
+		FROM = {
 			any_ship_in_system = {
-				# We want to react to "civilian" stations because they are weaponized
-				# But these ship types usually are not.
-				NOR = {
+				exists = owner
+				owner = { is_hostile = ROOT.owner }
+				is_disabled = no
+				NOT = {
+					# We might actually have to base it on military power.
 					is_ship_class = shipclass_constructor
 					is_ship_class = shipclass_colonizer
 					is_ship_class = shipclass_science_ship
 					is_ship_class = shipclass_transport
-				}
-				exists = owner
-				owner = {
-					is_hostile = root.owner
+					is_ship_class = shipclass_mining_station
+					is_ship_class = shipclass_research_station
+					is_ship_class = shipclass_wormhole_station
+					is_ship_class = shipclass_observation_station
 				}
 			}
 		}
@@ -41,7 +40,7 @@ ship_event = {
 		hidden_effect = {
 			fleet = {
 				clear_orders = yes
-				clear_fleet_actions = this
+				clear_fleet_actions = THIS
 				set_fleet_stance = evasive
 				#order_forced_return = yes
 			}
